@@ -8,7 +8,6 @@ import { githubButtons } from '../../mock/data';
 
 const Footer = () => {
   const { footer } = useContext(PortfolioContext);
-  const { networks } = footer;
   const { isEnabled } = githubButtons;
 
   return (
@@ -19,31 +18,33 @@ const Footer = () => {
             <i className="fa fa-angle-up fa-2x" aria-hidden="true" />
           </Link>
         </span>
+        <hr />
         <div className="social-links">
-          {networks &&
-            networks.map((network) => {
-              const { id, name, url } = network;
-              return (
-                <a
-                  key={id}
-                  href={url || 'https://github.com/cobidev/gatsby-simplefolio'}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  aria-label={name}
-                >
-                  <i className={`fa fa-${name || 'refresh'} fa-inverse`} />
-                </a>
-              );
-            })}
+          <ul>
+            <li>
+              <a href="https://github.com/V3nts0" target="_blank" rel="noreferrer" >
+                <i className="fa fa-github" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/ventsislav-georgiev-600454184/" target="_blank" rel="noreferrer" >
+                <i className="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/vencislav.georgiev.562" target="_blank" rel="noreferrer" >
+                <i className="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
         </div>
         <hr />
         <p className="footer__text">
-          © {new Date().getFullYear()} - Template developed by{' '}
-          <a href="https://github.com/cobidev" target="_blank" rel="noopener noreferrer">
-            Jacobo Martínez
+          © {new Date().getFullYear()} -
+          <a href="https://github.com/V3nts0" target="_blank" rel="noopener noreferrer">
+            Ventsislav Georgiev
           </a>
         </p>
-
         {isEnabled && <GithubButtons />}
       </Container>
     </footer>

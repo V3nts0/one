@@ -1,0 +1,113 @@
+#darkMode {
+    position: absolute;
+    z-index: 10;
+    right: 15px;
+    top: 2px;
+    border-radius: 50%;
+    transition: background-color 0.7s ease-in-out, filter 0.7s ease-in-out;
+  }
+  :root {
+    --blue: rgb(32, 33, 34);
+    --white: rgb(236, 236, 236);
+  }
+  
+  body.light {
+    background-color:  rgba(235, 235, 235, 0.993);
+    color: rgb(32, 33, 34);
+    --font-weight: 400;
+    .fa-inverse{
+      color: $primary-color!important;
+    }
+    .back-to-top i{
+      color:rgba(77, 75, 75, 0.301);
+    }
+    hr {
+      border-top: 2px solid rgba(77, 75, 75,1);
+    }
+    #darkMode {
+    background: url("../images/sun.png") no-repeat center;
+    background-size: 30px 30px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    }
+    #darkMode:hover {
+      filter: none;
+      background-color: rgb(243, 243, 71);
+      cursor: pointer;
+    }
+  }
+  
+  body.dark {
+    background-color: #474747;
+    color:rgb(236, 236, 236);
+    --font-weight: 500;
+    h2  ,h3, p, h1 {
+      color:rgb(236, 236, 236)!important;
+    }
+    .text-color-main{
+      background-color:  $secondary-color2;
+    }
+    .cta-btn--hero{
+     background-image: linear-gradient(
+  135deg
+  , $secondary-color2 0%, $secondary-color2 100%);
+    }
+   
+    .fa-inverse{
+      color: rgb(236, 236, 236)!important;
+    }
+  
+  
+  #hero .hero-cta a {
+    color: $secondary-color2 !important;;
+  }
+  
+    ul li a:hover {
+      
+      box-shadow: -20px 30px 30px rgba(255, 249, 249, 0.986);}
+    #darkMode{
+      background: transparent url("../images/moon.png") no-repeat center;
+      background-size: 30px 30px;
+      width: 45px;
+      height: 45px;
+      filter: grayscale(100%);
+      border: none;
+  
+    }
+    #darkMode:hover {
+    filter: none;
+    background-color: rgb(17, 17, 17);
+    cursor: pointer;
+  }
+  
+    #about {
+      background-color: $primary-color2;
+      background-image: linear-gradient(
+        135deg,
+        $primary-color2 0%,
+        $secondary-color2 100%
+      );
+    }
+  
+    #contact {
+      background-color: $primary-color2;
+      background-image: linear-gradient(
+        135deg,
+        $primary-color2 0%,
+        $secondary-color2 100%
+      );
+    }
+   
+  }
+  #darkMode:hover,
+  #darkMode:focus {
+    filter: none;
+    background-color: rgb(14, 14, 13);
+    cursor: pointer;
+  }
+  
+  #darkMode.clicked {
+    filter: none !important;
+    background-color: rgb(243, 243, 71);
+  }

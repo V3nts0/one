@@ -1,54 +1,62 @@
+
+
 #hero {
   min-height: 100vh;
   height: 100vh;
   display: flex;
   align-items: center;
   border-bottom: 0px;
-  background: $white-color;
+  justify-content: center;
   font-weight: 400;
-  color: $dark-blue-text;
+  color: rgb(236, 236, 236);
   padding: 0rem 5.6rem;
   margin-bottom: 0;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
+
   z-index: -1;
-
-  // If you want to set a background image on the hero section, uncomment these with yout custom image
-
-  /* background: url("/src/assets/[your-image].png");
+  transform-style: preserve-3d;
+  // background: url("../../images/bg.jpg")!important;
   background-position: center;
-  background-size: cover; */
-
+  background-size: cover; 
   @include respond(phone) {
     padding: 0rem $default-font-size;
   }
-
+  
+  .container {
+    backdrop-filter: grayscale(1);
+  }
   .hero-title {
-    font-size: 5.6rem;
+    font-size: 4.2rem;
     font-weight: 700;
     margin-bottom: 3.2rem;
-    text-align: left;
+    text-align: center;
+    padding: 20px 0;
 
     @include respond(tab-land) {
-      font-size: 4rem;
+      font-size: 3.8rem;
+      text-align: center;
+      padding-top: 45px;
     }
     @include respond(tab-port) {
-      font-size: 3.6rem;
+      font-size: 3.4rem;
       text-align: center;
     }
     @include respond(phone) {
-      font-size: 3.5rem;
-      line-height: 1.5;
+      font-size: 3rem;
+      line-height: 1.2;
     }
     @include respond(phone-xs) {
-      font-size: 2.8rem;
+      font-size: 2.4rem;
     }
   }
 
   .hero-cta {
     display: flex;
+    position: relative;
+    justify-content: center;
 
     @include respond(tab-port) {
       justify-content: center;
@@ -61,5 +69,50 @@
         font-size: 2rem;
       }
     }
+  }
+
+  .word {
+    perspective: 1000px; 
+  }
+  
+  .word span {
+    cursor: pointer;
+    display: inline-block;
+    user-select: none;
+    line-height: .8;
+    color: 
+      #00cdac !important;
+      margin: 0 8px;
+      height: 60px;
+  }
+  
+  .word span:nth-child(1).active {
+    animation: shrinkjump 1s ease-in-out;
+    transform-origin: bottom center;
+  }
+  
+  .word span:nth-child(2).active {
+    animation: shrinkjump 1s ease-in-out;
+    transform-origin: bottom center;
+  }
+  
+  @keyframes shrinkjump {
+    10%, 35% {
+      transform: scale(1.7, .2) translate(0, 0);
+    }
+    
+    45%, 50% {
+      transform: scale(1) translate(0, -150px);
+    }
+    
+    80% {
+      transform: scale(1) translate(0, 0);
+    }
+  }
+  .fixed {
+    position: fixed;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }

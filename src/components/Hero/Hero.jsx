@@ -3,10 +3,12 @@ import { Container } from 'react-bootstrap';
 import Fade from 'react-reveal/Fade';
 import { Link } from 'react-scroll';
 import PortfolioContext from '../../context/context';
+import bg from '../../images/bg.jpg'
+
 
 const Header = () => {
   const { hero } = useContext(PortfolioContext);
-  const { title, name, subtitle, cta } = hero;
+  const { title, fName,sName, subtitle, cta } = hero;
 
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -21,15 +23,36 @@ const Header = () => {
     }
   }, []);
 
+  // const spans = document.querySelectorAll('.word span');
+
+  // spans.forEach((span, idx) => {
+  //   span.addEventListener('click', (e) => {
+  //     e.target.classList.add('active');
+  //   });
+  //   span.addEventListener('animationend', (e) => {
+  //     e.target.classList.remove('active');
+  //   });
+    
+  //   // Initial animation
+  //   setTimeout(() => {
+  //     span.classList.add('active');
+  //   }, 750 * (idx+1))
+  // });
+
   return (
-    <section id="hero" className="jumbotron">
+    <section id="hero"style={{ 
+      backgroundImage: `url(${bg})` 
+    }} >
       <Container>
         <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={500} distance="30px">
-          <h1 className="hero-title">
-            {title || 'Hi, my name is'}{' '}
-            <span className="text-color-main">{name || 'Your Name'}</span>
+          <h1 className="hero-title" >
+            {title || ''} {' '}
+            <span className="word">
+              <span className="text-color-main"> {fName || ''}</span>
+              <span className="text-color-main"> {sName || ''}</span>
+            </span>
             <br />
-            {subtitle || "I'm the Unknown Developer."}
+            {subtitle || ""}
           </h1>
         </Fade>
         <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={1000} distance="30px">

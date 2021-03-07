@@ -1,5 +1,4 @@
 #projects {
-  background-color: $white-color;
   color: $dark-blue-text;
   margin-top: -15rem;
   padding-top: 15rem;
@@ -52,6 +51,7 @@
     &__image {
       width: 90%;
       margin: 0 auto;
+      border-radius: 10px;
 
       @include respond(tab-land) {
         width: 100%;
@@ -60,11 +60,13 @@
 
       & .thumbnail {
         border: none;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+        box-shadow: 0 13px 16px rgba(0, 0, 0, 0.16), 0 13px 16px rgba(0, 0, 0, 0.23);
         transition: all 0.2s ease-out;
-        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4), 0 15px 20px rgba(0, 0, 0, 0.35);
         transition: 0.5s transform cubic-bezier(0.155, 1.105, 0.295, 1.12), 0.5s box-shadow,
           0.5s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+        
 
         @include respond(phone) {
           border: 1px solid #d2d2d2;

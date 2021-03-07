@@ -4,6 +4,8 @@ import About from './About/About';
 import Projects from './Projects/Projects';
 import Contact from './Contact/Contact';
 import Footer from './Footer/Footer';
+// import DarkMode from "./darkMode";
+import { VFXProvider } from 'react-vfx';
 
 import { PortfolioProvider } from '../context/context';
 
@@ -25,13 +27,17 @@ function App() {
   }, []);
 
   return (
-    <PortfolioProvider value={{ hero, about, projects, contact, footer }}>
-      <Hero />
-      <About />
-      <Projects />
-      <Contact />
-      <Footer />
-    </PortfolioProvider>
+    <VFXProvider>
+        
+        <PortfolioProvider value={{ hero, about, projects, contact, footer }}>
+        {/* <DarkMode /> */}
+        <Hero />
+        <About />
+        <Projects />
+        <Contact />
+        <Footer />
+      </PortfolioProvider>
+    </VFXProvider>
   );
 }
 

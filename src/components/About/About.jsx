@@ -1,9 +1,11 @@
 import React, { useContext, useState, useEffect } from 'react';
+import { VFXImg } from 'react-vfx';
 import Fade from 'react-reveal/Fade';
 import { Container, Row, Col } from 'react-bootstrap';
 import Title from '../Title/Title';
-import AboutImg from '../Image/AboutImg';
 import PortfolioContext from '../../context/context';
+import imgs from '../../images/profile.jpg';
+import cv from '../../mock/resume.pdf'
 
 const About = () => {
   const { about } = useContext(PortfolioContext);
@@ -29,8 +31,12 @@ const About = () => {
         <Row className="about-wrapper">
           <Col md={6} sm={12}>
             <Fade bottom duration={1000} delay={600} distance="30px">
+
               <div className="about-wrapper__image">
-                <AboutImg alt="profile picture" filename={img} />
+              <VFXImg 
+              style={{width: "300px"}}
+              src={imgs}
+              shader="warpTransition"/>
               </div>
             </Fade>
           </Col>
@@ -54,7 +60,7 @@ const About = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="cta-btn cta-btn--resume"
-                      href={resume}
+                      href={cv}
                     >
                       Resume
                     </a>
