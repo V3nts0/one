@@ -23,6 +23,9 @@ const ToggleContainer = styled.button`
   width: 8rem;
   height: 4rem;
   outline:none;
+
+  button:focus {
+    outline: none;
   }
 `;
 
