@@ -10,10 +10,8 @@ import { lightTheme, darkTheme } from './DarkMode/theme';
 import { GlobalStyles } from './DarkMode/global';
 import { PortfolioProvider } from '../context/context';
 import { useDarkMode } from './DarkMode/useDarkMode';
-import Toggle from './darkMode'
+import Toggle from './darkMode';
 import { heroData, aboutData, projectsData, contactData, footerData } from '../mock/data';
-
-
 
 
 function App() {
@@ -25,8 +23,6 @@ function App() {
 
   const [theme, toggleTheme] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
-
-
 
   useEffect(() => {
     setHero({ ...heroData });
@@ -50,7 +46,6 @@ function App() {
       </PortfolioProvider>
     </VFXProvider>
       </ThemeProvider> 
-
   );
 }
 

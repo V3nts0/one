@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React from 'react';
 import { VFXImg } from 'react-vfx';
 import { func, string } from 'prop-types';
 import styled from 'styled-components';
@@ -22,11 +22,13 @@ const ToggleContainer = styled.button`
   padding: 0.5rem;
   width: 8rem;
   height: 4rem;
+  outline:none;
   }
 `;
 
+
 const Toggle = ({ theme, toggleTheme }) => {
-  const isLight = theme === 'light';
+const isLight = theme === 'light';
 
   return (
     <div className="container-header">

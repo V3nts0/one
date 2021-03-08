@@ -30,5 +30,4 @@ export const GlobalStyles = createGlobalStyle`
   ul li a:hover {
       
     box-shadow: -20px 30px 30px ${({ theme }) => theme.text};}
-    
  `

@@ -92,7 +92,15 @@ export const projectsData = [
     url: 'https://v3nts0.github.io/Spock-Rock-Lizard-Papper-Scissors/',
     repo: 'https://github.com/V3nts0/Spock-Rock-Lizard-Papper-Scissors', 
   },
-
+  {
+    id: nanoid(),
+    img: 'cards.png',
+    title: 'Glare Cards',
+    info: 'Some cool styling cards with nice effects. #JS #HTML #CSS',
+    info2: '',
+    url: 'https://github.com/V3nts0/glare-cards/settings',
+    repo: 'https://github.com/V3nts0/glare-cards', 
+  },
   {
     id: nanoid(),
     img: 'paint-clone.png',
@@ -122,22 +130,14 @@ export const projectsData = [
   },
   {
     id: nanoid(),
-    img: 'exploring-site.png',
-    title: 'Travel Landing Page',
-    info: ' Beautiful Travel Landing Page With Responsive Web Design.',
+    img: 'splash-page.png',
+    title: 'Splash Page',
+    info: 'Interesting style, good user experience. Adds a function to change several backgrounds.',
     info2: '',
-    url: 'https://v3nts0.github.io/travel-landing-page/',
-    repo: 'https://github.com/V3nts0/travel-landing-page', 
+    url: 'https://v3nts0.github.io/splash-page/',
+    repo: 'https://github.com/V3nts0/splash-page', 
   },
-  {
-    id: nanoid(),
-    img: 'cards.png',
-    title: 'Glare Cards',
-    info: 'Some cool styling cards with nice effects. #JS #HTML #CSS',
-    info2: '',
-    url: 'https://github.com/V3nts0/glare-cards/settings',
-    repo: 'https://github.com/V3nts0/glare-cards', 
-  },
+
 
   {
     id: nanoid(),
@@ -148,15 +148,7 @@ export const projectsData = [
     url: 'https://v3nts0.github.io/mini-music-player/',
     repo: 'https://github.com/V3nts0/mini-music-player', 
   },
-  {
-    id: nanoid(),
-    img: 'splash-page.png',
-    title: 'Splash Page',
-    info: 'Interesting style, good user experience. Adds a function to change several backgrounds.',
-    info2: '',
-    url: 'https://v3nts0.github.io/splash-page/',
-    repo: 'https://github.com/V3nts0/splash-page', 
-  },
+
 ];
 
 
