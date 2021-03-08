@@ -1,40 +1,32 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { VFXImg } from 'react-vfx';
+import { func, string } from 'prop-types';
+import styled from 'styled-components';
 import logo from '../images/logo.png';
+import { RiMoonClearFill } from 'react-icons/ri'
+import { ImSun } from 'react-icons/im'
 
-const DarkMode = () => {
-  let clickedClass = "clicked";
+const ToggleContainer = styled.button`
 
-   const body = typeof window !== 'undefined' && window.document.body
-  const lightTheme = "light";
-  const darkTheme = "dark";
-  let theme;
-  
-  if (typeof window !== 'undefined' ) {
-    theme = localStorage.getItem("theme");
+  background: ${({ theme }) => theme.gradient};
+  border: 2px solid ${({ theme }) => theme.toggleBorder};
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  font-size: 0.5rem;
+  position: absolute;
+  z-index: 10;
+  right: 15px;
+  top: 4px;
+  overflow: hidden;
+  padding: 0.5rem;
+  width: 8rem;
+  height: 4rem;
   }
+`;
 
-  if ( window !== 'undefined' && theme === lightTheme || theme === darkTheme) {
-    body.classList.add(theme);
-  } else {
-    body.classList.add(lightTheme);
-  }
-
-  
-  const switchTheme = (e) => {
-    if (window !== 'undefined' && theme === darkTheme) {
-      body.classList.replace(darkTheme, lightTheme);
-      e.target.classList.remove(clickedClass);
-      localStorage.setItem("theme", "light");
-      theme = lightTheme;
-
-    } else {
-      body.classList.replace(lightTheme, darkTheme);
-      e.target.classList.add(clickedClass);
-      localStorage.setItem("theme", "dark");
-      theme = darkTheme;
-    }
-  };
+const Toggle = ({ theme, toggleTheme }) => {
+  const isLight = theme === 'light';
 
   return (
     <div className="container-header">
@@ -43,13 +35,27 @@ const DarkMode = () => {
         src={logo}
         shader="pixelateTransition"
       />
-      <button
-        className={theme === "dark" ? clickedClass : ""}
-        id="darkMode"
-        onClick={(e) => switchTheme(e)}
-      ></button>
+      <ToggleContainer onClick={toggleTheme} >
+        {theme === 'light' ? <ImSun style={{
+          height: "auto", width: "2rem", position: "relative",
+          top: "3px",left: "6px",
+          transition: "all 0.3s linear", transform: "${({ lightTheme }) => lightTheme ? 'translateY(0)' : 'translateY(100px)'}"
+        }} /> :
+          <RiMoonClearFill style={{
+            height: "auto", width: "2rem", position: "relative",
+            left: "41px",
+            top: "3px",
+            transition: "all 0.3s linear", transform: "${({ lightTheme }) => lightTheme ? 'translateY(-100px)' : 'translateY(0)'}"
+          }}
+          />}
+      </ToggleContainer>
     </div>
   );
 };
 
-export default DarkMode;
+Toggle.propTypes = {
+  theme: string.isRequired,
+  toggleTheme: func.isRequired,
+}
+
+export default Toggle;

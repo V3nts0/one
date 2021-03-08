@@ -33,7 +33,7 @@
     margin-bottom: 1rem;
     border: 0;
     width: 50%;
-    border-top: 2px solid rgba(255, 255, 255, 0.1);
+    border-top: 2px solid $grey;
   }
 }
 .footer ul {
@@ -165,10 +165,11 @@ ul li:hover:nth-child(1) a:after{
 }
 
 .back-to-top i {
-  color: $white-color;
+  color: $grey;
   margin: 1rem 0 $default-font-size;
   transition: all 0.2s ease-in;
   cursor: pointer;
+  
 
   &:hover {
     transform: translateY(-2px);

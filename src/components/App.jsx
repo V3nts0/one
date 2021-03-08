@@ -4,12 +4,17 @@ import About from './About/About';
 import Projects from './Projects/Projects';
 import Contact from './Contact/Contact';
 import Footer from './Footer/Footer';
-import DarkMode from "./darkMode";
 import { VFXProvider } from 'react-vfx';
-
+import { ThemeProvider } from 'styled-components';
+import { lightTheme, darkTheme } from './DarkMode/theme';
+import { GlobalStyles } from './DarkMode/global';
 import { PortfolioProvider } from '../context/context';
-
+import { useDarkMode } from './DarkMode/useDarkMode';
+import Toggle from './darkMode'
 import { heroData, aboutData, projectsData, contactData, footerData } from '../mock/data';
+
+
+
 
 function App() {
   const [hero, setHero] = useState({});
@@ -17,6 +22,11 @@ function App() {
   const [projects, setProjects] = useState([]);
   const [contact, setContact] = useState({});
   const [footer, setFooter] = useState({});
+
+  const [theme, toggleTheme] = useDarkMode();
+  const themeMode = theme === 'light' ? lightTheme : darkTheme;
+
+
 
   useEffect(() => {
     setHero({ ...heroData });
@@ -27,10 +37,11 @@ function App() {
   }, []);
 
   return (
-    <VFXProvider>
-        
+    <ThemeProvider theme={themeMode}>
+    <GlobalStyles /> 
+    <VFXProvider>  
         <PortfolioProvider value={{ hero, about, projects, contact, footer }}>
-        <DarkMode />
+        <Toggle theme={theme} toggleTheme={toggleTheme} />
         <Hero />
         <About />
         <Projects />
@@ -38,6 +49,8 @@ function App() {
         <Footer />
       </PortfolioProvider>
     </VFXProvider>
+      </ThemeProvider> 
+
   );
 }
 
