@@ -67,10 +67,9 @@ export const projectsData = [
   {
     id: nanoid(),
     img: 'travel-page.png',
-    title: 'Landing Page Travel Agency Bulgaria',
+    title: 'Landing Page Travel Bulgaria',
     info: 'This project was bootstrapped with Create React App. Travel Landing Page. Theme is Bulgaria.',
     info2: '',
-    url: 'https://v3nts0.github.io/react-website-vs2/',
     repo: 'https://github.com/V3nts0/react-website-vs2', 
   },
   {
